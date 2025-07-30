@@ -1,0 +1,82 @@
+[gd_scene load_steps=13 format=3 uid="uid://dlrvpl64uyujc"]
+
+[ext_resource type="FontFile" uid="uid://bmp2wtmn88wd8" path="res://fonts/poco/Poco.ttf" id="1_v88uf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4twx3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nibp5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vrov6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ojlt0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tgfgl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g75r8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_btdj1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x4uwf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mc64p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t8tr2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ayuj8"]
+
+[node name="menu" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 64
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_v88uf")
+theme_override_font_sizes/font_size = 140
+text = "3D MAZE"
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+
+[node name="startBtn" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_hover_pressed_color = Color(0.970059, 0.333744, 0, 1)
+theme_override_colors/font_hover_color = Color(0.938973, 0.180705, 0.101254, 1)
+theme_override_fonts/font = ExtResource("1_v88uf")
+theme_override_font_sizes/font_size = 61
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4twx3")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_nibp5")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_vrov6")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_ojlt0")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_tgfgl")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_g75r8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btdj1")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_x4uwf")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_mc64p")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_t8tr2")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ayuj8")
+text = "Start Game"
+flat = true

@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1ippbdhltgen"]
+
+[ext_resource type="Script" uid="uid://djbm8cnqjm7jp" path="res://scripts/player.gd" id="1_eqqp1"]
+[ext_resource type="PackedScene" uid="uid://da8j4gf8bj0m5" path="res://menu/ui.tscn" id="2_ykyjo"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_bxedw"]
+radius = 0.3
+
+[sub_resource type="SphereMesh" id="SphereMesh_eqqp1"]
+radius = 0.3
+height = 0.6
+
+[node name="player" type="CharacterBody3D"]
+script = ExtResource("1_eqqp1")
+
+[node name="ui" parent="." instance=ExtResource("2_ykyjo")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_bxedw")
+debug_color = Color(2.575e-06, 0.646827, 0.23508, 1)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+mesh = SubResource("SphereMesh_eqqp1")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+fov = 90.0
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+spot_range = 20.0

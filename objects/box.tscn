@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhmingk7dvush"]
+
+[ext_resource type="Texture2D" uid="uid://dbrotvcu15j0p" path="res://textures/box_1.png" id="1_et42k"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bctmu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_et42k"]
+albedo_texture = ExtResource("1_et42k")
+uv1_offset = Vector3(0.505, 0.505, 0.5)
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_10rvk"]
+material = SubResource("StandardMaterial3D_et42k")
+
+[node name="box" type="Node3D"]
+
+[node name="Area3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_bctmu")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D/CollisionShape3D"]
+mesh = SubResource("BoxMesh_10rvk")

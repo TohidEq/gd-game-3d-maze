@@ -95,3 +95,10 @@ func entered_settingBox(thatBox):
 func exited_settingBox():
   is_touching_settingBox=false;
   touched_settingBox=null
+  
+  
+func _ready() -> void:
+  pass
+  
+        
+    

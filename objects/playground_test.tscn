@@ -8,4 +8,4 @@
 [node name="Menu3d" parent="." instance=ExtResource("1_acan3")]
 
 [node name="player" parent="." instance=ExtResource("3_mo618")]
-transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -1.01674, 0.877448, -5.59513)
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -4.81203, 0.877448, -5.59513)

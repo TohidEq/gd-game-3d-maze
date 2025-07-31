@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://db4uci1vgkn2q"]
 
-[ext_resource type="Script" uid="uid://dwpkon8ttc2wg" path="res://scripts/setting_block.gd" id="1_3frc7"]
+[ext_resource type="Script" uid="uid://dwpkon8ttc2wg" path="res://scripts/setting_box.gd" id="1_3frc7"]
 [ext_resource type="FontFile" uid="uid://bmp2wtmn88wd8" path="res://fonts/poco/Poco.ttf" id="1_4suec"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3frc7"]
-size = Vector3(0.3, 1, 1)
+size = Vector3(0.25, 1, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r1c87"]
 transparency = 1
@@ -15,7 +15,7 @@ material = SubResource("StandardMaterial3D_r1c87")
 radius = 0.3
 height = 0.6
 
-[node name="settingBlock" type="Node3D"]
+[node name="settingBox" type="Node3D"]
 script = ExtResource("1_3frc7")
 
 [node name="titile" type="Label3D" parent="."]
@@ -28,6 +28,7 @@ font = ExtResource("1_4suec")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="settingsBlockArea"]
 shape = SubResource("BoxShape3D_3frc7")
+debug_color = Color(0, 0, 0.701961, 1)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6, 0)
@@ -41,3 +42,6 @@ light_indirect_energy = 16.0
 light_volumetric_fog_energy = 16.0
 light_size = 1.0
 omni_range = 0.313
+
+[connection signal="body_entered" from="settingsBlockArea" to="." method="_on_settings_block_area_body_entered"]
+[connection signal="body_exited" from="settingsBlockArea" to="." method="_on_settings_block_area_body_exited"]

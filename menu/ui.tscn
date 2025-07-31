@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://da8j4gf8bj0m5"]
+[gd_scene load_steps=5 format=3 uid="uid://da8j4gf8bj0m5"]
 
 [ext_resource type="PackedScene" uid="uid://b45iwqrjh2hhn" path="res://joystick/move_joystick.tscn" id="1_gc15y"]
 [ext_resource type="PackedScene" uid="uid://ba41y2hg3uvre" path="res://joystick/view_joystick.tscn" id="2_rkq1q"]
-[ext_resource type="PackedScene" uid="uid://rd6fps6240hd" path="res://joystick/move_view_joystick.tscn" id="3_rkq1q"]
+[ext_resource type="PackedScene" uid="uid://rd6fps6240hd" path="res://joystick/move_2_joystick.tscn" id="3_rkq1q"]
+[ext_resource type="PackedScene" uid="uid://15d1v02dj4ta" path="res://joystick/view_2_joystick.tscn" id="4_lfmd2"]
 
 [node name="ui" type="Control"]
 layout_mode = 3
@@ -31,5 +32,8 @@ layout_mode = 2
 [node name="view_joystick" parent="joystick_mobile/MarginContainer" instance=ExtResource("2_rkq1q")]
 layout_mode = 2
 
-[node name="move_view_joystick" parent="joystick_mobile/MarginContainer" instance=ExtResource("3_rkq1q")]
+[node name="move_2_joystick" parent="joystick_mobile/MarginContainer" instance=ExtResource("3_rkq1q")]
+layout_mode = 2
+
+[node name="view_2_joystick" parent="joystick_mobile/MarginContainer" instance=ExtResource("4_lfmd2")]
 layout_mode = 2

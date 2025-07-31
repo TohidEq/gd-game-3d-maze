@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dgb312rq8i35"]
+[gd_scene load_steps=10 format=3 uid="uid://dgb312rq8i35"]
 
 [ext_resource type="Texture2D" uid="uid://dbrotvcu15j0p" path="res://textures/box_1.png" id="1_7pepk"]
 [ext_resource type="PackedScene" uid="uid://db4uci1vgkn2q" path="res://objects/settingBlock.tscn" id="2_ek25c"]
+[ext_resource type="FontFile" uid="uid://bmp2wtmn88wd8" path="res://fonts/poco/Poco.ttf" id="3_1kyxa"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ek25c"]
 size = Vector3(49, 1, 49)
@@ -97,5 +98,26 @@ shape = SubResource("BoxShape3D_7pepk")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="walls/wall4/Area3D/CollisionShape3D"]
 mesh = SubResource("BoxMesh_8vwaa")
 
-[node name="settingBlock" parent="." instance=ExtResource("2_ek25c")]
+[node name="xyz" parent="." instance=ExtResource("2_ek25c")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1, 1, -6)
+beforeValue = "X,Y,Z :"
+titleOnly = true
+
+[node name="x" parent="." instance=ExtResource("2_ek25c")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1, 1, -5)
+beforeValue = "X:"
+
+[node name="y" parent="." instance=ExtResource("2_ek25c")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.00011, 0.997329, -4.00001)
+beforeValue = "Y:"
+
+[node name="z" parent="." instance=ExtResource("2_ek25c")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.00011, 0.997329, -3.00001)
+beforeValue = "Y:"
+
+[node name="help-settingBox" type="Label3D" parent="."]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -0.505216, 1.11952, -2)
+text = "use your
+top right
+controller"
+font = ExtResource("3_1kyxa")

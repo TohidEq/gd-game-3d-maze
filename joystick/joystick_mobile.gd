@@ -29,7 +29,7 @@ func _input(event: InputEvent) -> void:
     
     if relative.length() > radius:
       relative = relative.normalized() * radius; 
-    
+      
     direction = relative.normalized() 
     distance_to_marker = (center_marker.position.distance_to(stick.position));
     stick.position = (self.size/2) - (stick.size/2) + relative

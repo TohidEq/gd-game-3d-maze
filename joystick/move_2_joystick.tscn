@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://rd6fps6240hd"]
 
-[ext_resource type="Texture2D" uid="uid://bm30au8mjfc2f" path="res://textures/joystick_base_outline.png" id="1_bt36d"]
-[ext_resource type="Script" uid="uid://c5hu1rxgrr5dl" path="res://joystick/joystick_mobile.gd" id="2_m7ohb"]
-[ext_resource type="Texture2D" uid="uid://dt13r06u87fib" path="res://textures/joystick_tip_arrows.png" id="3_bt36d"]
+[ext_resource type="Texture2D" uid="uid://bm30au8mjfc2f" path="res://textures/joystick_base_outline.png" id="1_icl5g"]
+[ext_resource type="Script" uid="uid://c5hu1rxgrr5dl" path="res://joystick/joystick_mobile.gd" id="2_a2swa"]
+[ext_resource type="Texture2D" uid="uid://c1m1eqnktvdip" path="res://textures/joystick_tip_arrows-TOP_DOWN.png" id="3_2ju6g"]
 
-[node name="move_view_joystick" type="Control"]
+[node name="move_2_joystick" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,14 +15,12 @@ grow_vertical = 2
 [node name="base" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.844
-anchor_right = 1.0
+anchor_right = 0.156
 anchor_bottom = 0.278
-offset_left = -0.320068
-offset_bottom = -0.160004
-grow_horizontal = 0
-texture = ExtResource("1_bt36d")
-script = ExtResource("2_m7ohb")
+offset_right = 0.319992
+offset_bottom = -0.160019
+texture = ExtResource("1_icl5g")
+script = ExtResource("2_a2swa")
 
 [node name="stick" type="TextureRect" parent="base"]
 layout_mode = 1
@@ -35,7 +33,7 @@ offset_right = -1.52588e-05
 offset_bottom = -1.52588e-05
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_bt36d")
+texture = ExtResource("3_2ju6g")
 
 [node name="center_marker" type="Marker2D" parent="base"]
 position = Vector2(50.0001, 50)

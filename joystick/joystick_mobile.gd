@@ -5,6 +5,9 @@ var direction : Vector2 = Vector2.ZERO;
 var touch_id :int = -1;
 
 @onready var stick: TextureRect = $stick
+@onready var center_marker: Marker2D = $center_marker
+
+@onready var distance_to_marker = (center_marker.position.distance_to(stick.position));
 
 
 func _ready() -> void:
@@ -28,6 +31,7 @@ func _input(event: InputEvent) -> void:
       relative = relative.normalized() * radius; 
     
     direction = relative.normalized() 
+    distance_to_marker = (center_marker.position.distance_to(stick.position));
     stick.position = (self.size/2) - (stick.size/2) + relative
     
 
@@ -37,10 +41,13 @@ func _process(delta: float) -> void:
 
 
 func _reset_stick() -> void:
+  distance_to_marker = 0.0
   stick.position= (self.size/2) - (stick.size/2)
   
 func get_direction() -> Vector2:
   return direction;
-  
+
+func get_distance() -> float:
+  return distance_to_marker;
   
   

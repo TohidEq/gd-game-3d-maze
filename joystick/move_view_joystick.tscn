@@ -36,3 +36,6 @@ offset_bottom = -1.52588e-05
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_bt36d")
+
+[node name="center_marker" type="Marker2D" parent="base"]
+position = Vector2(50.0001, 50)

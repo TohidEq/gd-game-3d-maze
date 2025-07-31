@@ -12,7 +12,8 @@ const JUMP_VELOCITY = 4.5
 @export var rotation_speed := 150.0
 
 func _process(delta: float) -> void:
-  print(move_joystick.get_direction(), view_joystick.get_direction(), move_view_joystick.get_direction())
+  #print(move_joystick.get_direction(), view_joystick.get_direction(), move_view_joystick.get_direction())
+  print(int(move_joystick.get_distance())/100.0)
 
 func _physics_process(delta: float) -> void:
 
@@ -25,7 +26,7 @@ func _physics_process(delta: float) -> void:
   direction += transform.basis.z * bckwrd_and_frwrd_touch
   
   var left_and_right_move_touch =  move_joystick.get_direction()[0];  
-  direction += transform.basis.x * left_and_right_move_touch
+  direction += transform.basis.x * left_and_right_move_touch 
 
 
 
@@ -42,12 +43,17 @@ func _physics_process(delta: float) -> void:
   direction = direction.normalized()
 
   if direction != Vector3.ZERO:
-      velocity = direction * SPEED*delta
+      velocity = direction * SPEED*delta * maxf(
+        int(move_joystick.get_distance())/100.0,
+        int(move_view_joystick.get_distance())/100.0 )
   else:
-      velocity = velocity.move_toward(Vector3.ZERO, SPEED*delta)
+      velocity = velocity.move_toward(
+          Vector3.ZERO, 
+          SPEED*delta
+        )
 
   
-  print("player direction:",direction)
+  #print("player direction:",direction)
   
   # rotates
   if Input.is_action_pressed("rotate_left"):
@@ -57,7 +63,7 @@ func _physics_process(delta: float) -> void:
     rotate_object_local(Vector3.UP, deg_to_rad(-rotation_speed * delta))
 
   var left_and_right_view_touch =  view_joystick.get_direction()[0];
-  rotate_object_local(Vector3.UP, deg_to_rad(-left_and_right_view_touch*rotation_speed * delta))
+  rotate_object_local(Vector3.UP, deg_to_rad(-left_and_right_view_touch*rotation_speed * delta * (int(view_joystick.get_distance())/100.0)))
 
 
 
@@ -71,7 +77,11 @@ func _physics_process(delta: float) -> void:
     rotate_object_local(Vector3.RIGHT, deg_to_rad(-rotation_speed * delta))
     
   var down_and_top_touch =  view_joystick.get_direction()[1];
-  rotate_object_local(Vector3.RIGHT, deg_to_rad(-down_and_top_touch * rotation_speed * delta))
+  rotate_object_local(Vector3.RIGHT, deg_to_rad(
+    -down_and_top_touch * rotation_speed * delta * 
+    (int(view_joystick.get_distance())/100.0)
+    )
+    )
   
   
   if Input.is_action_pressed("rotate_q"):
@@ -81,6 +91,11 @@ func _physics_process(delta: float) -> void:
     rotate_object_local(Vector3.FORWARD, deg_to_rad(rotation_speed * delta))
     
   var q_and_e_touch =  move_view_joystick.get_direction()[0];
-  rotate_object_local(Vector3.FORWARD, deg_to_rad(q_and_e_touch * rotation_speed * delta))
+  rotate_object_local(Vector3.FORWARD, deg_to_rad(q_and_e_touch * 
+    rotation_speed * 
+    delta * 
+    (int(move_view_joystick.get_distance())/100.0)
+    )
+    )
     
   move_and_slide()

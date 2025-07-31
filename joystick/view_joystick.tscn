@@ -33,8 +33,10 @@ anchor_left = 0.25
 anchor_top = 0.25
 anchor_right = 0.75
 anchor_bottom = 0.75
-offset_right = -1.52588e-05
-offset_bottom = -1.52588e-05
+offset_right = -6.10352e-05
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_ruvx0")
+
+[node name="center_marker" type="Marker2D" parent="base"]
+position = Vector2(50.0001, 50)

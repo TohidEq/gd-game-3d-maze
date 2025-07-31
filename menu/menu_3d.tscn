@@ -116,7 +116,7 @@ min_val = 3
 
 [node name="z" parent="." instance=ExtResource("2_ek25c")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.00011, 0.997329, -3.00001)
-beforeValue = "Y:"
+beforeValue = "Z:"
 
 [node name="help-settingBox" type="Label3D" parent="."]
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -0.505216, 1.11952, -2)

@@ -4,12 +4,15 @@ const SPEED = 150
 @export var rotation_speed := 150.0
 
 @onready var move_joystick: Control = $ui.get_node("joystick_mobile/MarginContainer/move_joystick").get_node("base")
+@onready var move_top_down_joystick: Control = $ui.get_node("joystick_mobile/MarginContainer/move_top_down_joystick").get_node("base")
 
-@onready var view_joystick: Control = $ui.get_node("joystick_mobile/MarginContainer/view_joystick").get_node("base")
 
-@onready var move_2_joystick: Control = $ui.get_node("joystick_mobile/MarginContainer/move_2_joystick").get_node("base")
 
-@onready var view_2_joystick: Control = $ui.get_node("joystick_mobile/MarginContainer/view_2_joystick").get_node("base")
+@onready var view_left_right_joystick: Control = $ui.get_node("joystick_mobile/MarginContainer/view_left_right_joystick").get_node("base")
+@onready var view_top_down_joystick: Control = $ui.get_node("joystick_mobile/MarginContainer/view_top_down_joystick").get_node("base")
+
+# q e rotates
+@onready var view_rotate_joystick: Control = $ui.get_node("joystick_mobile/MarginContainer/view_rotate_joystick").get_node("base")
 
 var is_touching_settingBox:bool=false;
 
@@ -23,7 +26,7 @@ func _process(delta):
         time_accumulator = 0.0
         print(touched_settingBox)
         
-        var q_and_e_touch = view_2_joystick.get_direction()[0];
+        var q_and_e_touch = view_rotate_joystick.get_direction()[0];
         if(is_touching_settingBox and (touched_settingBox !=null)):
           if(q_and_e_touch>0):
             touched_settingBox.increase();
@@ -48,7 +51,7 @@ func _physics_process(delta: float) -> void:
 
 
   # move: top down
-  var ctrl_and_space_touch = move_2_joystick.get_direction()[1];
+  var ctrl_and_space_touch = move_top_down_joystick.get_direction()[1];
   direction -= ctrl_and_space_touch*transform.basis.y
   
   direction = direction.normalized()
@@ -56,7 +59,7 @@ func _physics_process(delta: float) -> void:
   if direction != Vector3.ZERO:
       velocity = direction * SPEED*delta * maxf(
         int(move_joystick.get_distance())/100.0,
-        int(move_2_joystick.get_distance())/100.0 )
+        int(move_top_down_joystick.get_distance())/100.0 )
   else:
       velocity = velocity.move_toward(
           Vector3.ZERO, 
@@ -67,21 +70,22 @@ func _physics_process(delta: float) -> void:
   #print("player direction:",direction)
   
   # rotates
-  var left_and_right_view_touch = view_joystick.get_direction()[0];
-  rotate_object_local(Vector3.UP, deg_to_rad(-left_and_right_view_touch*rotation_speed * delta * (int(view_joystick.get_distance())/100.0)))
+  var left_and_right_view_touch = view_left_right_joystick.get_direction()[0];
+  rotate_object_local(Vector3.UP, deg_to_rad(-left_and_right_view_touch*rotation_speed * delta * (int(view_left_right_joystick.get_distance())/100.0)))
   
-  var down_and_top_touch = view_joystick.get_direction()[1];
+  var down_and_top_touch = view_top_down_joystick.get_direction()[1];
   rotate_object_local(Vector3.RIGHT, deg_to_rad(
     -down_and_top_touch * rotation_speed * delta * 
-    (int(view_joystick.get_distance())/100.0)
+    (int(view_top_down_joystick.get_distance())/100.0)
     ))
     
-  var q_and_e_touch = view_2_joystick.get_direction()[0];
+  # Q and E rotates
+  var q_and_e_touch = view_rotate_joystick.get_direction()[0];
   if(not is_touching_settingBox):
     rotate_object_local(Vector3.FORWARD, deg_to_rad(q_and_e_touch * 
       rotation_speed * 
       delta * 
-      (int(view_2_joystick.get_distance())/100.0)
+      (int(view_rotate_joystick.get_distance())/100.0)
       ))
       
     

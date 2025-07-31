@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://c5hu1rxgrr5dl" path="res://joystick/joystick_mobile.gd" id="2_eh7j8"]
 [ext_resource type="Texture2D" uid="uid://cevp7camg8nuj" path="res://textures/joystick_tip_arrows-LEFT-RIGHT.png" id="3_5rblj"]
 
-[node name="view_2_joystick" type="Control"]
+[node name="joystick" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

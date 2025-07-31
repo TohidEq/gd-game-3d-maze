@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://da8j4gf8bj0m5"]
+[gd_scene load_steps=6 format=3 uid="uid://da8j4gf8bj0m5"]
 
 [ext_resource type="PackedScene" uid="uid://b45iwqrjh2hhn" path="res://joystick/move_joystick.tscn" id="1_gc15y"]
-[ext_resource type="PackedScene" uid="uid://ba41y2hg3uvre" path="res://joystick/view_joystick.tscn" id="2_rkq1q"]
-[ext_resource type="PackedScene" uid="uid://rd6fps6240hd" path="res://joystick/move_2_joystick.tscn" id="3_rkq1q"]
-[ext_resource type="PackedScene" uid="uid://15d1v02dj4ta" path="res://joystick/view_2_joystick.tscn" id="4_lfmd2"]
+[ext_resource type="PackedScene" uid="uid://ba41y2hg3uvre" path="res://joystick/view_left_right_joystick.tscn" id="2_rkq1q"]
+[ext_resource type="PackedScene" uid="uid://c5ro2rt1hl83" path="res://joystick/view_top_down_joystick.tscn" id="3_1jqv7"]
+[ext_resource type="PackedScene" uid="uid://rd6fps6240hd" path="res://joystick/move_top_down_joystick.tscn" id="3_rkq1q"]
+[ext_resource type="PackedScene" uid="uid://15d1v02dj4ta" path="res://joystick/view_rotate_joystick.tscn" id="4_lfmd2"]
 
 [node name="ui" type="Control"]
 layout_mode = 3
@@ -21,19 +22,27 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 64
-theme_override_constants/margin_top = 64
-theme_override_constants/margin_right = 64
-theme_override_constants/margin_bottom = 64
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="view_left_right_joystick" parent="joystick_mobile/MarginContainer" instance=ExtResource("2_rkq1q")]
+modulate = Color(0.11259, 0.64079, 1, 0.807843)
+layout_mode = 2
+
+[node name="view_top_down_joystick" parent="joystick_mobile/MarginContainer" instance=ExtResource("3_1jqv7")]
+modulate = Color(0.11259, 0.64079, 1, 0.807843)
+layout_mode = 2
+
+[node name="view_rotate_joystick" parent="joystick_mobile/MarginContainer" instance=ExtResource("4_lfmd2")]
+modulate = Color(0.628522, 0.608628, 0.60955, 0.807843)
+layout_mode = 2
 
 [node name="move_joystick" parent="joystick_mobile/MarginContainer" instance=ExtResource("1_gc15y")]
+modulate = Color(0, 0.745098, 0.00392157, 0.807843)
 layout_mode = 2
 
-[node name="view_joystick" parent="joystick_mobile/MarginContainer" instance=ExtResource("2_rkq1q")]
-layout_mode = 2
-
-[node name="move_2_joystick" parent="joystick_mobile/MarginContainer" instance=ExtResource("3_rkq1q")]
-layout_mode = 2
-
-[node name="view_2_joystick" parent="joystick_mobile/MarginContainer" instance=ExtResource("4_lfmd2")]
+[node name="move_top_down_joystick" parent="joystick_mobile/MarginContainer" instance=ExtResource("3_rkq1q")]
+modulate = Color(0, 0.745098, 0.00392157, 0.807843)
 layout_mode = 2

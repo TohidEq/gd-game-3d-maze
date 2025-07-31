@@ -35,11 +35,6 @@ func initGrid() -> void:
     grid.append(layer)
 
 func getGrid() -> Array:
-  grid[0][1][0]=false;
-  grid[1][1][0]=false;
-  grid[1][1][1]=false;
-  grid[1][2][1]=false;
-  
   return grid
 
 func isBounds(_x: int, _y: int, _z: int) -> bool:

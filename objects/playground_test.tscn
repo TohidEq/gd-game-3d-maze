@@ -13,19 +13,64 @@ script = ExtResource("1_gfwp6")
 [node name="Menu3d" parent="." instance=ExtResource("1_acan3")]
 
 [node name="player" parent="." instance=ExtResource("3_mo618")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.81203, 0.877448, -5.59513)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5, 1, -4)
 
 [node name="StartMaze" parent="." instance=ExtResource("4_gfwp6")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.01589, 1.05414, -0.996129)
 beforeValue = "START "
 value = 0
-min_val = 0
+min_val = -1
 max_val = 1
 steps = 1
 
 [node name="Label3D" type="Label3D" parent="StartMaze"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0944319, -0.428975)
-text = "increase number
+text = "change number
 to start the game"
 font = ExtResource("5_mo618")
 font_size = 18
+
+[node name="Label3D" type="Label3D" parent="StartMaze/Label3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.57862, 0.164864, -0.0484335)
+text = "select your Maze Generation Algorithm
+
+1 : DFS  Algorithm (easy)
+-1 : Prime Algorithm (hard)"
+font = ExtResource("5_mo618")
+font_size = 24
+outline_size = 7
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.44361, 1, -4)
+text = "Pls use your all View Keys on right of the screen
+all rotations are 90 deg
+Blue keys can be used on setting boxes 
+(setting boxes: set x,y,z and start game boxes with red light area)"
+font = ExtResource("5_mo618")
+font_size = 27
+outline_size = 8
+
+[node name="Label3D2" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.44361, 1.03218, -7.09925)
+text = "Your goal is to exit from maze
+you can set your custom maze size
+maze starts at x:0 y:0 z:0
+maze ends (exit door) at settings X,Y,Z"
+font = ExtResource("5_mo618")
+font_size = 27
+outline_size = 8
+
+[node name="Label3D3" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.28939, 1.14653, -7.09925)
+text = "for example a 11*11*11 maze
+ends at x,y,z:11,11,11"
+font = ExtResource("5_mo618")
+font_size = 27
+outline_size = 8
+
+[node name="Label3D4" type="Label3D" parent="."]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 0.587887, 2.14653, -1.09573)
+text = "why are you here??"
+font = ExtResource("5_mo618")
+font_size = 27
+outline_size = 8

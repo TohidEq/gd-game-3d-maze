@@ -8,32 +8,12 @@ const SPEED = 150
 
 
 
-@onready var view_left_right_joystick: Control = $ui.get_node("joystick_mobile/MarginContainer/view_left_right_joystick").get_node("base")
-@onready var view_top_down_joystick: Control = $ui.get_node("joystick_mobile/MarginContainer/view_top_down_joystick").get_node("base")
 
-# q e rotates
-@onready var view_rotate_joystick: Control = $ui.get_node("joystick_mobile/MarginContainer/view_rotate_joystick").get_node("base")
 
 var is_touching_settingBox:bool=false;
 
 
 var touched_settingBox: Node = null
-
-#var time_accumulator = 0.0
-#func _process(delta):
-    #time_accumulator += delta
-    #if time_accumulator >= 0.2:
-        #time_accumulator = 0.0
-        ##print(touched_settingBox)
-        #
-        #var q_and_e_touch = view_rotate_joystick.get_direction()[0];
-        #if(is_touching_settingBox and (touched_settingBox !=null)):
-          #if(q_and_e_touch>0):
-            #touched_settingBox.increase();
-          #elif(q_and_e_touch<0):
-            #touched_settingBox.decrease();
-            
-        
         
 
 func _physics_process(delta: float) -> void:
@@ -66,30 +46,6 @@ func _physics_process(delta: float) -> void:
           SPEED*delta
         )
 
-  
-  #print("player direction:",direction)
-  
-  ## rotates
-  #var left_and_right_view_touch = view_left_right_joystick.get_direction()[0];
-  #rotate_object_local(Vector3.UP, deg_to_rad(-left_and_right_view_touch*rotation_speed * delta * (int(view_left_right_joystick.get_distance())/100.0)))
-  #
-  #var down_and_top_touch = view_top_down_joystick.get_direction()[1];
-  #rotate_object_local(Vector3.RIGHT, deg_to_rad(
-    #-down_and_top_touch * rotation_speed * delta * 
-    #(int(view_top_down_joystick.get_distance())/100.0)
-    #))
-    #
-  ## Q and E rotates
-  #var q_and_e_touch = view_rotate_joystick.get_direction()[0];
-  #if(not is_touching_settingBox):
-    #rotate_object_local(Vector3.FORWARD, deg_to_rad(q_and_e_touch * 
-      #rotation_speed * 
-      #delta * 
-      #(int(view_rotate_joystick.get_distance())/100.0)
-      #))
-      
-    
-    
     
   move_and_slide()
 
@@ -115,7 +71,15 @@ func _rotate_smoothly_local(axis: Vector3, angle_deg: float, duration := 0.3) ->
   if is_rotating:
     return
   is_rotating = true
-
+  
+  #  --------------------
+  if axis.length() == 0:
+      print("Warning: axis vector is zero, skipping rotation.")
+      is_rotating = false
+      return
+  #  --------------------
+      
+      
   var local_axis = global_transform.basis * axis.normalized()
   var angle_rad = deg_to_rad(angle_deg)
 

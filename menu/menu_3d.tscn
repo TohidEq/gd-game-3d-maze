@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://dgb312rq8i35"]
+[gd_scene load_steps=12 format=3 uid="uid://dgb312rq8i35"]
 
 [ext_resource type="Texture2D" uid="uid://dbrotvcu15j0p" path="res://textures/box_1.png" id="1_7pepk"]
 [ext_resource type="Script" uid="uid://ckg6oosgepmwg" path="res://menu/menu_3d.gd" id="1_8vwaa"]
 [ext_resource type="PackedScene" uid="uid://db4uci1vgkn2q" path="res://objects/settingBlock.tscn" id="2_ek25c"]
 [ext_resource type="FontFile" uid="uid://bmp2wtmn88wd8" path="res://fonts/poco/Poco.ttf" id="3_1kyxa"]
+[ext_resource type="PackedScene" uid="uid://bhmingk7dvush" path="res://objects/box.tscn" id="5_i6wp5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ek25c"]
 size = Vector3(9, 1, 9)
@@ -124,3 +125,9 @@ text = "use your
 top right
 controller"
 font = ExtResource("3_1kyxa")
+
+[node name="box" parent="." instance=ExtResource("5_i6wp5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 0)
+
+[node name="box2" parent="." instance=ExtResource("5_i6wp5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

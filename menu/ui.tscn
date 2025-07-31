@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://da8j4gf8bj0m5"]
+[gd_scene load_steps=5 format=3 uid="uid://da8j4gf8bj0m5"]
 
 [ext_resource type="PackedScene" uid="uid://b45iwqrjh2hhn" path="res://joystick/move_joystick.tscn" id="1_gc15y"]
-[ext_resource type="PackedScene" uid="uid://ba41y2hg3uvre" path="res://joystick/view_left_right_joystick.tscn" id="2_rkq1q"]
-[ext_resource type="PackedScene" uid="uid://c5ro2rt1hl83" path="res://joystick/view_top_down_joystick.tscn" id="3_1jqv7"]
+[ext_resource type="Script" uid="uid://d3ccfebtmiyoa" path="res://buttons/btn_val.gd" id="1_h31rx"]
 [ext_resource type="PackedScene" uid="uid://rd6fps6240hd" path="res://joystick/move_top_down_joystick.tscn" id="3_rkq1q"]
-[ext_resource type="PackedScene" uid="uid://15d1v02dj4ta" path="res://joystick/view_rotate_joystick.tscn" id="4_lfmd2"]
+[ext_resource type="PackedScene" uid="uid://bfil0k07dweua" path="res://buttons/btns_view.tscn" id="6_0518c"]
 
 [node name="ui" type="Control"]
 layout_mode = 3
@@ -26,18 +25,11 @@ theme_override_constants/margin_left = 30
 theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 30
+script = ExtResource("1_h31rx")
 
-[node name="view_left_right_joystick" parent="joystick_mobile/MarginContainer" instance=ExtResource("2_rkq1q")]
-modulate = Color(0.11259, 0.64079, 1, 0.807843)
+[node name="btns_view" parent="joystick_mobile/MarginContainer" instance=ExtResource("6_0518c")]
 layout_mode = 2
-
-[node name="view_top_down_joystick" parent="joystick_mobile/MarginContainer" instance=ExtResource("3_1jqv7")]
-modulate = Color(0.11259, 0.64079, 1, 0.807843)
-layout_mode = 2
-
-[node name="view_rotate_joystick" parent="joystick_mobile/MarginContainer" instance=ExtResource("4_lfmd2")]
-modulate = Color(0.628522, 0.608628, 0.60955, 0.807843)
-layout_mode = 2
+size_flags_horizontal = 1
 
 [node name="move_joystick" parent="joystick_mobile/MarginContainer" instance=ExtResource("1_gc15y")]
 modulate = Color(0, 0.745098, 0.00392157, 0.807843)

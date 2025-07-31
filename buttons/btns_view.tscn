@@ -1,0 +1,93 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfil0k07dweua"]
+
+[ext_resource type="PackedScene" uid="uid://cn0csyhs0fkhj" path="res://buttons/btn_1.tscn" id="1_a0ns2"]
+
+[node name="btn" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="r_right_z" parent="." instance=ExtResource("1_a0ns2")]
+modulate = Color(0, 0.521569, 1, 0.803922)
+layout_mode = 1
+anchor_left = 0.937
+anchor_top = 0.207
+anchor_right = 1.0
+anchor_bottom = 0.318
+offset_left = 0.639771
+offset_top = -0.0400085
+offset_right = -0.00012207
+offset_bottom = 0.0399933
+grow_horizontal = 0
+val = "r_right_z"
+
+[node name="r_left_z" parent="." instance=ExtResource("1_a0ns2")]
+modulate = Color(0, 0.521569, 1, 0.803922)
+layout_mode = 1
+anchor_left = 0.805
+anchor_top = 0.207
+anchor_right = 0.867
+anchor_bottom = 0.318
+offset_left = -0.400269
+offset_top = -0.0400085
+offset_right = 0.23999
+offset_bottom = 0.0399628
+grow_horizontal = 0
+val = "r_left_z"
+
+[node name="r_right" parent="." instance=ExtResource("1_a0ns2")]
+modulate = Color(0, 0.478431, 0.290196, 0.792157)
+layout_mode = 1
+anchor_left = 0.937
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.611
+offset_left = 0.639893
+offset_right = 0.0
+offset_bottom = 0.0799866
+grow_horizontal = 0
+
+[node name="r_top" parent="." instance=ExtResource("1_a0ns2")]
+modulate = Color(0, 0.478431, 0.290196, 0.792157)
+layout_mode = 1
+anchor_left = 0.871
+anchor_top = 0.382
+anchor_right = 0.934
+anchor_bottom = 0.5
+offset_left = 0.119873
+offset_top = -0.0400085
+offset_right = -0.52002
+offset_bottom = -5.0
+grow_horizontal = 0
+val = "r_top"
+
+[node name="r_left" parent="." instance=ExtResource("1_a0ns2")]
+modulate = Color(0, 0.478431, 0.290196, 0.792157)
+layout_mode = 1
+anchor_left = 0.805
+anchor_top = 0.5
+anchor_right = 0.867
+anchor_bottom = 0.611
+offset_left = -0.400146
+offset_right = 0.23999
+offset_bottom = 0.0799866
+grow_horizontal = 0
+val = "r_left"
+
+[node name="r_down" parent="." instance=ExtResource("1_a0ns2")]
+modulate = Color(0, 0.478431, 0.290196, 0.792157)
+layout_mode = 1
+anchor_left = 0.871
+anchor_top = 0.618
+anchor_right = 0.934
+anchor_bottom = 0.729
+offset_left = 0.119873
+offset_top = 0.039978
+offset_right = -0.52002
+offset_bottom = 0.119995
+grow_horizontal = 0
+val = "r_down"

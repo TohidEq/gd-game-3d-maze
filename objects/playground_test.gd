@@ -1,7 +1,12 @@
 extends Node3D
-@onready var menu_3d: Node3D = $Menu3d
 
+
+@onready var menu_3d: Node3D = $Menu3d
 @onready var start_maze: Node3D = $StartMaze
+
+
+
+
 var waitForStart = true;
 func _process(delta: float) -> void:
   if waitForStart:
@@ -24,10 +29,8 @@ func _process(delta: float) -> void:
             if(grid[zi][yi][xi]):
               clone_object_at_position_3d(Vector3(xi,yi,zi))
     
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:   
-  pass # Replace with function body.
+    
+    
 
 
 

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://ba1ne7gr1125y"]
+[gd_scene load_steps=6 format=3 uid="uid://ba1ne7gr1125y"]
 
 [ext_resource type="PackedScene" uid="uid://dgb312rq8i35" path="res://menu/menu_3d.tscn" id="1_acan3"]
 [ext_resource type="Script" uid="uid://csck5e0887rj0" path="res://objects/playground_test.gd" id="1_gfwp6"]
 [ext_resource type="PackedScene" uid="uid://d1ippbdhltgen" path="res://objects/player.tscn" id="3_mo618"]
 [ext_resource type="PackedScene" uid="uid://db4uci1vgkn2q" path="res://objects/settingBlock.tscn" id="4_gfwp6"]
+[ext_resource type="FontFile" uid="uid://bmp2wtmn88wd8" path="res://fonts/poco/Poco.ttf" id="5_mo618"]
 
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1)
@@ -12,12 +13,19 @@ script = ExtResource("1_gfwp6")
 [node name="Menu3d" parent="." instance=ExtResource("1_acan3")]
 
 [node name="player" parent="." instance=ExtResource("3_mo618")]
-transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -4.81203, 0.877448, -5.59513)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.81203, 0.877448, -5.59513)
 
 [node name="StartMaze" parent="." instance=ExtResource("4_gfwp6")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.01589, 1.05414, -0.996129)
-beforeValue = "START"
+beforeValue = "START "
 value = 0
 min_val = 0
 max_val = 1
 steps = 1
+
+[node name="Label3D" type="Label3D" parent="StartMaze"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0944319, -0.428975)
+text = "increase number
+to start the game"
+font = ExtResource("5_mo618")
+font_size = 18
